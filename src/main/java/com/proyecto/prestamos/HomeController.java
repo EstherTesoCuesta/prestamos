@@ -52,6 +52,7 @@ public class HomeController {
         if (loan!=null) {
             model.addAttribute("id", id);
             model.addAttribute("loan", loan);
+            model.addAttribute("status_list", loan.next_string_status());
             return "modify_loan";
         }
         else{
@@ -59,15 +60,20 @@ public class HomeController {
         }
     }
 
-    @PostMapping("/client/post_loan/{id}")
-    public String new_loan(@ModelAttribute ModifyDTO modifyDto, Model model, @PathVariable int id){
+    @PostMapping("/manager/status_loan/{id}")
+    public String status_loan(Model model,  @RequestParam(required=false) String status, @PathVariable int id){
         Loan loan;
         String answer;
         try {
-            loan = PrestamosApplication.get_loan_data(id);
-            // TODO: update loan
-            answer="Loan application correctly modified.";
-            PrestamosApplication.store_loan_data(loan);
+            if(status!=null) {
+                loan = PrestamosApplication.get_loan_data(id);
+                loan.updateStatus(status);
+                answer = "Loan application correctly modified.";
+                //PrestamosApplication.store_loan_data(loan);
+            }
+            else{
+                answer="Status was not changed";
+            }
         }
         catch (Exception ex) {
             answer = "Error during loan application: %s.".formatted(ex.getMessage());
@@ -77,7 +83,8 @@ public class HomeController {
     }
 
     @GetMapping("/system")
-    public String system() {
+    public String system(Model model) {
+        model.addAttribute("loans", PrestamosApplication.get_loan_data());
         return "system";
     }
 

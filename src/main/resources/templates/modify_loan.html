@@ -7,31 +7,41 @@
 <body>
     <h1>Modify loan data</h1>
 
-    <h2>Current data</h2>
+    <h2>Modify status</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>ID</th>
+            <th>Date</th>
+        </tr>
+        </thead>
 
-    <h2>Modify some values</h2>
-    <form th:action="@{/client/post_loan/{id}(id=${id})}" method="post" id="loan_form">
-        <label>Client name</label>
-        <input type ="text" label="Client name" name="name"/>
-        <label>Loan amount</label>
-        <input type ="number" step="0.01" name="amount"/>
-        <label>Currency</label>
-        <input type ="text" name="currency"/>
-        <label>ID type</label>
-        <select name="idtype" label="ID type" id="idtype">
-            <option value="DNI">DNI</option>
-            <option value="Passport">Passport</option>
-        </select>
-        <label>ID</label>
-        <input type ="text" label="Client ID" name="id"/>
+        <tbody>
+        <tr>
+            <td th:text="${loan.getName()}"></td>
+            <td th:text="${loan.getAmount()}"></td>
+            <td th:text="${loan.getCurrency()}"></td>
+            <td th:text="${loan.getId().toString()}"></td>
+            <td th:text="${loan.getCreation()}"></td>
+            <td th:text="${loan.getStatus()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:action="@{/manager/status_loan/{id}(id=${id})}" method="post" id="loan_form">
         <label>Status</label>
         <select name="status" label="Status" id="status">
-            <option value="Pending">Pending</option>
-            <option value="Accepted">Accepted</option>
-            <option value="Rejected">Rejected</option>
-            <option value="Canceled">Canceled</option>
+            <option th:each="status : ${status_list}"
+                    th:value="${status}" th:text="${status}">
+            </option>
         </select>
         <button type="submit" id="button" >Submit</button>
     </form>
+
+    <a id = "a" href ="/"><h3>Index access</h3></a>
+
 </body>
 </html>

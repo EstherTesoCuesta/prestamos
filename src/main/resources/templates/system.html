@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>System access</title>
 </head>
 <body>
-    <h1>History</h1>
-    <form action="/posting" method="post" id="form">
-        <input type ="text" name="someName"/>
-        <button type="submit" id="button2" >Submit2</button>
-    </form>
+
+    <h1>Loan applications history</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>ID</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="loan : ${loans}">
+            <td th:text="${loan.value.getName()}"></td>
+            <td th:text="${loan.value.getAmount()}"></td>
+            <td th:text="${loan.value.getCurrency()}"></td>
+            <td th:text="${loan.value.getId().toString()}"></td>
+            <td th:text="${loan.value.getCreation()}"></td>
+            <td th:text="${loan.value.getStatus()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a id = "a" href ="/"><h3>Index access</h3></a>
+
 </body>
 </html>

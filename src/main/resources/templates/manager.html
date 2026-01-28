@@ -6,6 +6,9 @@
 </head>
 <body>
     <h1>Review loan applications</h1>
+
+    <h2>List of loan applications</h2>
+
     <table>
         <thead>
         <tr>
@@ -17,8 +20,6 @@
             <th>Modify<th>
         </tr>
         </thead>
-
-        <h2>List of loan applications</h2>
 
         <tbody>
         <tr th:each="loan : ${loans}">
@@ -33,5 +34,6 @@
         </tbody>
     </table>
 
+    <a id = "a" href ="/"><h3>Index access</h3></a>
 </body>
 </html>

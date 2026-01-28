@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class PrestamosApplication {
@@ -23,16 +23,16 @@ public class PrestamosApplication {
 	private static void initialize_loan_data(){
 		// First client
 		Loan.IDType id = new Loan.DNI("12345678A");
-		loan_data.put(0, new Loan("Antonio Machado", 500, "EUR", id, new Date(2025, 9, 23), Loan.Status.CANCELED));
-		loan_data.put(1, new Loan("Antonio Machado", 1200, "EUR", id, new Date(2025, 11, 5), Loan.Status.PENDING));
+		loan_data.put(0, new Loan("Antonio Machado", 500, "EUR", id, LocalDate.of(2025, 9, 23), Loan.Status.CANCELED));
+		loan_data.put(1, new Loan("Antonio Machado", 1200, "EUR", id, LocalDate.of(2025, 11, 5), Loan.Status.PENDING));
 		// Second client
 		id = new Loan.DNI("00000000T");
-		loan_data.put(45, new Loan("Almudena Grandes", 830, "USD", id, new Date(2025, 6, 8), Loan.Status.ACCEPTED));
-		loan_data.put(4, new Loan("Almudena Grandes", 2070, "GPB", id, new Date(2025, 12, 3), Loan.Status.PENDING));
-		loan_data.put(4, new Loan("Almudena Grandes", 4000, "GPB", id, new Date(2025, 5, 30), Loan.Status.ACCEPTED));
+		loan_data.put(45, new Loan("Almudena Grandes", 830, "USD", id, LocalDate.of(2025, 6, 8), Loan.Status.ACCEPTED));
+		loan_data.put(4, new Loan("Almudena Grandes", 2070, "GPB", id, LocalDate.of(2025, 12, 3), Loan.Status.PENDING));
+		loan_data.put(4, new Loan("Almudena Grandes", 4000, "GPB", id, LocalDate.of(2025, 5, 30), Loan.Status.ACCEPTED));
 		// Third client
 		id = new Loan.DNI("23232311W");
-		loan_data.put(12, new Loan("Miguel de Cervantes", 7980, "USD", id, new Date(2025, 6, 8), Loan.Status.CANCELED));
+		loan_data.put(12, new Loan("Miguel de Cervantes", 7980, "USD", id, LocalDate.of(2025, 6, 8), Loan.Status.CANCELED));
 	}
 
 	public static ArrayList<Map.Entry<Integer, Loan>> get_loan_data(){
