@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager access</title>
+</head>
+<body>
+    <h1>Review loan applications</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Modify<th>
+        </tr>
+        </thead>
+
+        <h2>List of loan applications</h2>
+
+        <tbody>
+        <tr th:each="loan : ${loans}">
+            <td th:text="${loan.value.getName()}"></td>
+            <td th:text="${loan.value.getAmount()}"></td>
+            <td th:text="${loan.value.getCurrency()}"></td>
+            <td th:text="${loan.value.getId().toString()}"></td>
+            <td th:text="${loan.value.getCreation()}"></td>
+            <td th:text="${loan.value.getStatus()}"></td>
+            <td><a th:href="@{/manager/modify_loan/{key}(key=${loan.key})}">Modify this application</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
