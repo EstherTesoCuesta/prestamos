@@ -57,7 +57,7 @@ Finalmente la clase LoanDTO es empleada para recoger la información que a trav�
 Se han implementado templates HTML junto a las funciones del controlador y la librería Thymeleaf para permitir probar las funcionalidades de una forma más fluida pero no forman parte del desarrollo Back-end propuesto en la prueba técnica. El diseño de la propuesta permite entrar a una primera página que sirve como índice para acceder a las funcionalidades que tendría un cliente, un gestor o el sistema.
 Accediendo a la página de cliente se puede rellenar un formulario para realizar una solicitud de préstamos, esta información es gestionada desde el controlador y se añade a los datos cargados en memoria.
 Accediendo a la página de gestor se pueden revisar todas las solicitudes existentes en el sistema, y pedir modificar el estado de una de ellas; se procede a otra página con sólo la información de la solicitud a modificar y el nuevo estado se recoge a través de un formulario y este es de nuevo gestionado por el controlador y se actualiza el estado de esa solicitud en memoria haciendo uso del identificador único de la solicitud.
-Accediendo a la página de sistema se puede ver la lista completa de todas las solicituded cargadas en memoria.
+Accediendo a la página de sistema se puede ver la lista completa de todas las solicitudes cargadas en memoria.
 
 ## Propuesta de ampliación
 
