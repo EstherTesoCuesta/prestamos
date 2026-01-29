@@ -18,8 +18,8 @@ Una vez realizados estos pasos, la aplicación estará montada de forma local en
 
 Este proyecto se ha llevado a cabo empleando las siguientes tecnologías integradas en una estructura API Rest:
 
--	Maven (versión .0.0): que es una herramienta de software para la gestión y automatización de aplicaciones Java.
--	Spring-boot: que es un framework de código abierto que la gestión de microservicios de Spring para el desarrollo de aplicación Java.
+-	Maven (versión 4.0.0): que es una herramienta de software para la gestión y automatización de aplicaciones Java.
+-	Spring-boot (versión 4.0.2): que es un framework de código abierto que la gestión de microservicios de Spring para el desarrollo de aplicación Java.
 
 Más información sobre las capacidades de Spring-boot empleadas se detallará en la sección de dependencias del proyecto.
 
