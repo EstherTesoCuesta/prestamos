@@ -36,7 +36,7 @@ Casos de uso
 El proyecto sigue una estructura habitual de proyecto Spring-boot.
 
 - La función principal PrestamosApplication inicializa el almacenamiento de datos en una variable de tipo Mapa simulando el identificador único de la solicitud de préstamos que aportaría el uso funcional de una base de datos.
-- Luego se presenta una clase HomeController que implementa todos los endpoint necesarios para cubrir el microservicio de préstamos, funciones post para introducir información datos para generar una solicitud de préstamo (por parte de un cliente) como id y estado de para modificar el estado de una solicitud existente (por parte de un manager).
+- Luego se presenta una clase HomeController que implementa todos los endpoint necesarios para cubrir el microservicio de préstamos, funciones post para introducir información datos para generar una solicitud de préstamo (por parte de un cliente) como id y estado de para modificar el estado de una solicitud existente (por parte de un gestor).
 - Por último están las clases Loan y LoanDTO, las cuáles respectivamente se utilizan para encapsular la información de las solicitudes de préstamo y la información que provee el usuario cliente a través de un formulario para que posterioremente se convierta en una solicitud (LoanDTO representa la información del cliente y se utiliza para generar un objeto Loan que poder ser gestionado por el sistema).
 
 #### Front-end
@@ -50,4 +50,4 @@ El proyecto se ha desarrollado con unas limitaciones técnicas y de tiempo que h
 -	La comprobando la validez de los valores introducidos por el usuario. Por ejemplo implementando una lista de divisas a escoger o ampliando las clases de documentos identificativos que pueden proveerse y añadiendo complejidad a su método de verificación de la validez.
 -	La incrementación de la complejidad del Front-end, aunque queda fuera del alcance de esta prueba técnica sería un ejercicio necesario para la completitud de la aplicación.
 -	La implementación de un mecanismo de inicio de sesión para los diferentes actores: clienta, gestor y sistema, utilizando credenciales gestionables por la base de datos.
--	La ampliación de las funcionalidades para cada tipo de actor, por ejemplo que el usuario cliente pueda consultar la lista de sus solicitudes y estados; que el manager sólo reciba la lista de solicitudes a las que puede cambiar el estado (si es Pendiente o Aceptado).
+-	La ampliación de las funcionalidades para cada tipo de actor, por ejemplo que el usuario cliente pueda consultar la lista de sus solicitudes y estados; que el gestor sólo reciba la lista de solicitudes a las que puede cambiar el estado (si es Pendiente o Aceptado).
