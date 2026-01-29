@@ -33,14 +33,15 @@ Casos de uso
 
 #### Back-end
 
-El proyecto sigue una estructura habitual de proyecto Spring-boot. La función principal PrestamosApplication inicializa el almacenamiento de datos en una variable de tipo Mapa simulando el identificador único de la solicitud de préstamos que aportaría el uso funcional de una base de datos.
-Presenta una clase HomeController que implementa todos los endpoint necesarios para cubrir el microservicio de préstamos.
+El proyecto sigue una estructura habitual de proyecto Spring-boot.
+
+- La función principal PrestamosApplication inicializa el almacenamiento de datos en una variable de tipo Mapa simulando el identificador único de la solicitud de préstamos que aportaría el uso funcional de una base de datos.
+- Luego se presenta una clase HomeController que implementa todos los endpoint necesarios para cubrir el microservicio de préstamos, funciones post para introducir información datos para generar una solicitud de préstamo (por parte de un cliente) como id y estado de para modificar el estado de una solicitud existente (por parte de un manager).
+- Por último están las clases Loan y LoanDTO, las cuáles respectivamente se utilizan para encapsular la información de las solicitudes de préstamo y la información que provee el usuario cliente a través de un formulario para que posterioremente se convierta en una solicitud (LoanDTO representa la información del cliente y se utiliza para generar un objeto Loan que poder ser gestionado por el sistema).
 
 #### Front-end
 
 Se han implementado templates HTML que utilizados junto a las funciones del controller y la librería themleaf se utilizan para; esta parte está ideada para permitir probar las funcionalidades de una forma más fluida pero no forma parte del desarrollo Back-end propuesto en la prueba técnica.
-
-### Aclaraciones posteriores
 
 ## Propuesta de ampliación
 
